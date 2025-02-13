@@ -20,6 +20,7 @@ public class GenerateDungeon : MonoBehaviour
     {
         paintedFloorTiles = new HashSet<Vector2Int>();
         Vector2Int currentLocation = new Vector2Int(0, 0);
+        paintedFloorTiles.Add(currentLocation);
 
         for (int i = 0; i < iterations; i++) 
         {
