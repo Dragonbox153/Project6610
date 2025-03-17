@@ -5,10 +5,11 @@ using UnityEngine.Tilemaps;
 
 public class GenerateDungeon : MonoBehaviour
 {
-    [SerializeField] Tilemap wall, floor;
-    [SerializeField] RuleTile wallTile, floorTile;
+    [SerializeField] Tilemap wall, floor, treasure;
+    [SerializeField] RuleTile wallTile, floorTile, treasureTile;
     HashSet<Vector2Int> paintedFloorTiles;
     [SerializeField] int iterations, walkLength, maxX, maxY;
+    [SerializeField] short treasureRNG;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,10 @@ public class GenerateDungeon : MonoBehaviour
         foreach(Vector2Int tile in paintedFloorTiles)
         {
             floor.SetTile((Vector3Int)tile, floorTile);
+            if (Random.Range(0, 255) < treasureRNG)
+            {
+                treasure.SetTile((Vector3Int)tile, treasureTile);
+            }
         }
 
         for (int i = -maxX - 1; i <= maxX; i++)
