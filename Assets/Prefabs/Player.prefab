@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6290315467336724278}
   - component: {fileID: 2158739736446910766}
   - component: {fileID: 1515623434893024694}
+  - component: {fileID: 8952917504783153723}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -177,3 +178,16 @@ MonoBehaviour:
   maxVelocity: 5
   speed: 5
   player: {fileID: 6290315467336724278}
+--- !u!114 &8952917504783153723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603458594242667703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73e2823fd9d50c499cc47789cef07a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeAttack: {fileID: 6180788050581527073, guid: 5a94597ba8d300446acf3d5c19a4b7b0, type: 3}
