@@ -14,7 +14,7 @@ public class PlayerMeleeAttack : MonoBehaviour
 
     private void Update()
     {
-        if (!attacking && Input.GetMouseButtonDown(0))
+        if (!attacking && Input.GetMouseButtonDown(1))
         {
             attackTime = attackDuration;
             attacking = true;

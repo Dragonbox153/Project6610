@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3a41aa219b92c4b9e72147b5262243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledBullet: {fileID: 0}
+  pooledBullet: {fileID: 9084872940557069244, guid: f5a181520d835754790c99f9ade05c4e, type: 3}
 --- !u!4 &889654295
 Transform:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdea7b77efafaed4da87d47f494b9643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeAttack: {fileID: 0}
+  attackDuration: 1
 --- !u!1001 &1611986605
 PrefabInstance:
   m_ObjectHideFlags: 0
