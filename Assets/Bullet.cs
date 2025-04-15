@@ -46,6 +46,10 @@ public class Bullet : MonoBehaviour
     {
         bulIDStart = ID;
     }
+    public byte GetBulletID()
+    {
+        return bulIDStart;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,6 +58,7 @@ public class Bullet : MonoBehaviour
         {
             if(collision.GetComponent<EnemyHealth>()  != null && bulletIsType(1))
             {
+                Debug.Log("Player lands a hit!");
                 collision.GetComponent<EnemyHealth>().TakeDamage(2);
                 Destroy();
             }

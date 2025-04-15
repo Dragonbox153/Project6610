@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class Player_Bullet_Attack : MonoBehaviour
+public class PlayerBulletAttack : MonoBehaviour
 {
     bool attacking = false;
     [SerializeField]
