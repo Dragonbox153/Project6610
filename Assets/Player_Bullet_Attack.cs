@@ -15,7 +15,7 @@ public class Player_Bullet_Attack : MonoBehaviour
     {
         if (!attacking && Input.GetMouseButtonDown(0))
         {
-            gameObject.GetComponent<Fire>().FireBullet();
+            gameObject.GetComponent<Fire>().FireBullet(gameObject.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), 1);
         }
 
         if (attacking)
