@@ -6,15 +6,12 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void FireBullet()
+    public void FireBullet(Vector2 start, Vector2 end, byte bulID)
     {
-        Vector2 start = gameObject.transform.position;
-        Vector2 end = Input.mousePosition;
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Quaternion quaternion = Quaternion.Euler(0, 0, Mathf.Atan2(transform.position.y - mousePos.y, transform.position.x - mousePos.x) * Mathf.Rad2Deg - 90);
-        float angle = MathF.Atan2(mousePos.y - start.y, mousePos.x - start.x) + 180;
-        Debug.Log(mousePos);
-        Debug.Log(start);
+        Quaternion quaternion = Quaternion.Euler(0, 0, Mathf.Atan2(transform.position.y - end.y, transform.position.x - end.x) * Mathf.Rad2Deg - 90);
+        float angle = MathF.Atan2(end.y - start.y, end.x - start.x) + 180;
+        // Debug.Log(end);
+        // Debug.Log(start);
 
         float bulDirX = start.x + Mathf.Sin((Mathf.Deg2Rad * angle));
         float bulDirY = start.y + Mathf.Cos((Mathf.Deg2Rad * angle));
@@ -26,7 +23,8 @@ public class Fire : MonoBehaviour
         GameObject bul = BulletPool.bulletPoolInstance.GetBullet();
         bul.transform.position = start;
         bul.transform.rotation = quaternion;
-        bul.GetComponent<Bullet>().moveDirection = bulDir;
+        bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
+        bul.GetComponent<Bullet>().SetBulletID(bulID);
         bul.SetActive(true);
     }
 }
