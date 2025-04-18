@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4987540100470964675}
   - component: {fileID: 4923291577901381731}
   - component: {fileID: 421560946010533523}
-  - component: {fileID: 2424961826633762648}
+  - component: {fileID: 4997482178180071325}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: Untagged
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.5294118}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -177,8 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   travelTime: 0.5
-  bulIDStart: 2
---- !u!114 &2424961826633762648
+--- !u!114 &4997482178180071325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,7 +186,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9084872940557069244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c212657edb08f442aa24a9b6de0a782, type: 3}
+  m_Script: {fileID: 11500000, guid: d086a761ee3664d46a316a2864f49dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulID: 2
