@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class Action : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    List<Action> canDoSimultaneously;
+    bool interupting;
+    bool finished = false;
+
+    public float queuedTime;
+    public float expiryTime;
+    public float priority;
+
+    public bool CanInterupt()
     {
-        
+        return interupting;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool CanDoBoth(Action other)
     {
-        
+        if (canDoSimultaneously.Contains(other))
+        {
+            return true;
+        }
+        return false;
     }
+
+    public bool IsComplete()
+    {
+        return finished;
+    }
+
+    virtual public void Execute() { }
 }
