@@ -19,7 +19,7 @@ public class FireAttackAction : Action
         if (!attacking)
         {
             timer = 0;
-            StartCoroutine(enemyFireBehavior.FireCoroutine(5));
+            StartCoroutine(enemyFireBehavior.FireCoroutine(2));
             attacking = true;
         }
         if (attacking)
