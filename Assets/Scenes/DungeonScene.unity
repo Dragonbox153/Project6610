@@ -301,6 +301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2765359353814802381, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3514160874493599944, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
       propertyPath: m_IsTrigger
       value: 0
