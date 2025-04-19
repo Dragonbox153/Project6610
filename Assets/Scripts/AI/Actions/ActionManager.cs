@@ -6,64 +6,112 @@ using UnityEngine;
 
 public class ActionManager : MonoBehaviour
 {
-    List<Action> pending;
-    List<Action> active;
+    [SerializeField] List<Action> pending = new List<Action>();
+    [SerializeField] List<Action> active = new List<Action>();
 
     public void Schedule(Action action)
     {
+        action.queuedTime = 0;
         pending.Add(action);
         pending.OrderBy(p => p.priority);
+        pending = pending.Distinct().ToList();
     }
 
     void UpdateActionQueuedTime()
     {
         foreach (Action action in pending)
         {
-            action.queuedTime += Time.deltaTime;
-
-            if(action.queuedTime > action.expiryTime )
+            if (pending.Count > 0)
             {
-                pending.Remove(action);
+
+                action.queuedTime += Time.deltaTime;
+                if (action.queuedTime > action.expiryTime)
+                {
+                    pending.Remove(action);
+                }
+            }
+        }
+
+        foreach (Action action in active)
+        {
+            if (active.Count > 0)
+            {
+
+                action.queuedTime += Time.deltaTime;
+                if (action.queuedTime > action.expiryTime)
+                {
+                    active.Remove(action);
+                }
             }
         }
     }
 
     void CheckInterrupts()
     {
-        Action highestPriorityActive = active[pending.Count - 1];
-        foreach (Action pendingAction in pending)
+        if (active.Count > 0)
         {
-            if (pendingAction.CanInterupt())
+            Action highestPriorityActive = active.Last();
+            foreach (Action pendingAction in pending)
             {
-                active.Clear();
-                active.Add(pendingAction);
-                pending.Remove(pendingAction);
+                if (pendingAction.CanInterupt() || highestPriorityActive == null)
+                {
+                    active.Clear();
+                    active.Add(pendingAction);
+                    pending.Remove(pendingAction);
+                }
             }
+        }
+        else if (pending.Count > 0)
+        {
+            active.Add(pending.Last());
+            pending.Remove(pending.Last());
         }
     }
 
     void PromoteQueuedToActive()
     {
-        Action highestPriorityActive = active[pending.Count - 1];
-        foreach (Action pendingAction in pending)
+        if (active.Count > 0)
         {
-            if(pendingAction.CanDoBoth(highestPriorityActive.GetType()))
+            Action highestPriorityActive = active.Last();
+            foreach (Action pendingAction in pending)
             {
-                active.Add(pendingAction);
+                if (pendingAction.CanDoBoth(highestPriorityActive.GetType()))
+                {
+                    active.Add(pendingAction);
+                }
             }
+        }
+        else if (pending.Count > 0)
+        {
+            active.Add(pending.Last());
+            pending.Remove(pending.Last());
         }
     }
 
     void RunActiveActions()
     {
-        foreach(Action action in active)
+        foreach (Action action in active)
         {
-            action.Execute();
+            if (active.Count > 0)
+            {
+                action.Execute();
+            }
         }
     }
 
     private void Update()
     {
+        if (Input.GetKeyUp(KeyCode.Z)) {
+            Schedule(GetComponent<MeleeAttackAction>());
+        }
+
+        if(Input.GetKeyUp(KeyCode.X))
+        {
+            GetComponent<MovementAction>().targetPosition = GameObject.Find("Player").transform.position;
+            Schedule(GetComponent<MovementAction>());
+        }
+
+        active = active.Distinct().ToList();
         UpdateActionQueuedTime();
         CheckInterrupts();
         PromoteQueuedToActive();

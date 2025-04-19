@@ -6,6 +6,9 @@ using UnityEngine;
 public class MeleeAttackAction : Action
 {
     public EnemyMeleeAttack enemyMeleeAttack;
+    bool attacking = false;
+    float timer = 0;
+    float attackDuration = 1;
 
     private void Start()
     {
@@ -15,6 +18,24 @@ public class MeleeAttackAction : Action
 
     public override void Execute()
     {
-        enemyMeleeAttack.MeleeAttack();
+        if(!attacking)
+        {
+            timer = 0;
+            enemyMeleeAttack.MeleeAttack();
+            attacking = true;
+        }
+        
+        if(attacking)
+        {
+            timer += Time.deltaTime;
+            if(timer > attackDuration)
+            {
+                enemyMeleeAttack.EndAttack();
+            }
+            if(timer > expiryTime)
+            {
+                attacking = false;
+            }
+        }
     }
 }

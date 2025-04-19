@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Action : MonoBehaviour
 {
-    protected List<Type> canDoSimultaneously;
+    protected List<Type> canDoSimultaneously = new List<Type>();
     protected bool interupting;
     protected bool finished = false;
 
@@ -20,7 +20,7 @@ public class Action : MonoBehaviour
 
     public bool CanDoBoth(Type other)
     {
-        if (canDoSimultaneously.Contains(other))
+        if (canDoSimultaneously.Count > 0 && canDoSimultaneously.Contains(other))
         {
             return true;
         }
