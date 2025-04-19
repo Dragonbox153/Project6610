@@ -19,31 +19,24 @@ public class ActionManager : MonoBehaviour
 
     void UpdateActionQueuedTime()
     {
-        foreach (Action action in pending)
+        if (pending.Count > 0)
         {
-            if (pending.Count > 0)
+            foreach (Action action in pending)
             {
-
                 action.queuedTime += Time.deltaTime;
-                if (action.queuedTime > action.expiryTime)
-                {
-                    pending.Remove(action);
-                }
             }
         }
 
-        foreach (Action action in active)
+        if (active.Count > 0)
         {
-            if (active.Count > 0)
+            foreach (Action action in active)
             {
-
                 action.queuedTime += Time.deltaTime;
-                if (action.queuedTime > action.expiryTime)
-                {
-                    active.Remove(action);
-                }
             }
         }
+
+        pending.RemoveAll(p => p.queuedTime > p.expiryTime);
+        active.RemoveAll(a => a.queuedTime > a.expiryTime);
     }
 
     void CheckInterrupts()
@@ -101,11 +94,12 @@ public class ActionManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Z)) {
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
             Schedule(GetComponent<MeleeAttackAction>());
         }
 
-        if(Input.GetKeyUp(KeyCode.X))
+        if (Input.GetKeyUp(KeyCode.X))
         {
             GetComponent<MovementAction>().targetPosition = GameObject.Find("Player").transform.position;
             Schedule(GetComponent<MovementAction>());
