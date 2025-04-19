@@ -5,6 +5,8 @@ using UnityEngine;
 public class FireAttackAction : Action
 {
     public EnemyFireBehavior enemyFireBehavior;
+    bool attacking = false;
+    float timer = 0;
 
     private void Start()
     {
@@ -14,6 +16,19 @@ public class FireAttackAction : Action
 
     public override void Execute()
     {
-        StartCoroutine(enemyFireBehavior.FireCoroutine(5));
+        if (!attacking)
+        {
+            timer = 0;
+            StartCoroutine(enemyFireBehavior.FireCoroutine(5));
+            attacking = true;
+        }
+        if (attacking)
+        {
+            timer += Time.deltaTime;
+            if (timer > expiryTime)
+            {
+                attacking = false;
+            }
+        }
     }
 }
