@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MeleeAtackAction : Action
+public class MeleeAttackAction : Action
 {
     public EnemyMeleeAttack enemyMeleeAttack;
 
