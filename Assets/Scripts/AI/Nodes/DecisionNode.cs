@@ -10,9 +10,11 @@ public class DecisionNode : DecisionTreeNode
 
     Func<bool> trueCheck;
 
-    public DecisionNode(Func<bool> boolCheck)
+    public DecisionNode(Func<bool> boolCheck, DecisionTreeNode truth, DecisionTreeNode notTruth)
     {
         trueCheck = boolCheck;
+        trueNode = truth;
+        falseNode = notTruth;
     }
 
     public virtual bool IsTrue()
@@ -25,7 +27,7 @@ public class DecisionNode : DecisionTreeNode
         return IsTrue() ? trueNode: falseNode;
     }
 
-    public override DecisionTreeNode MakeDecision()
+    public override ActionNode MakeDecision()
     {
         return this.GetBranch().MakeDecision();
     }
