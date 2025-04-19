@@ -111,6 +111,11 @@ public class ActionManager : MonoBehaviour
             Schedule(GetComponent<MovementAction>());
         }
 
+        if(Input.GetKeyUp(KeyCode.C))
+        {
+            Schedule(GetComponent<FireAttackAction>());
+        }
+
         active = active.Distinct().ToList();
         UpdateActionQueuedTime();
         CheckInterrupts();
