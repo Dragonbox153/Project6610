@@ -6,7 +6,6 @@ public class ActionNode : DecisionTreeNode
 {
     Action action;
 
-
     public override DecisionTreeNode MakeDecision()
     {
         return this;

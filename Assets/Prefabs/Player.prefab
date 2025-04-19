@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 1515623434893024694}
   - component: {fileID: 8952917504783153723}
   - component: {fileID: 648878290887959499}
+  - component: {fileID: 665535475921890577}
+  - component: {fileID: 6150520837449403593}
+  - component: {fileID: 702077556092216786}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -79,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 91599811fa9f51649867e6142f601e19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -206,3 +209,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   maxHealth: 5
+--- !u!114 &665535475921890577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603458594242667703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f97c7c9361d70479dad82ea864bc4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treasureObject: {fileID: 0}
+  minTreasure: 0
+  maxTreasure: 100
+  totalTreasure: 0
+--- !u!114 &6150520837449403593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603458594242667703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94291213dfe3a9344880361c11afd070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &702077556092216786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603458594242667703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdea7b77efafaed4da87d47f494b9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDuration: 1

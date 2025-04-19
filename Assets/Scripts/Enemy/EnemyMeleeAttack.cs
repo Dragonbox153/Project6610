@@ -19,7 +19,7 @@ public class EnemyMeleeAttack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void MeleeAttack()
     {
         delayTime -= Time.deltaTime;
 
@@ -30,19 +30,23 @@ public class EnemyMeleeAttack : MonoBehaviour
             attacking = true;
             Quaternion quaternion = Quaternion.Euler(0, 0, Mathf.Atan2(transform.position.y - player.transform.position.y, transform.position.x - player.transform.position.x) * Mathf.Rad2Deg - 90);
             currEnemyAttack = Instantiate(enemyMeleeAttack, transform.position, quaternion);
+            currEnemyAttack.GetComponent<EnemyAttackEffect>().enemy = this.gameObject;
         }
 
-        if(attacking)
+        if (attacking)
         {
             attackTime -= Time.deltaTime;
-
-            currEnemyAttack.transform.position = transform.position;
         }
 
-        if(attackTime <= 0)
+        if (attackTime <= 0)
         {
             attacking = false;
             Destroy(currEnemyAttack);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(currEnemyAttack);
     }
 }

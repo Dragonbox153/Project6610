@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class MovementAction : Action
 {
-    EnemyMovement enemyMovement;
+    public EnemyMovement enemyMovement;
     public Vector2 targetPosition;
 
     private void Start()
     {
-        enemyMovement = GetComponent<EnemyMovement>();
+        interupting = false;
+        canDoSimultaneously.Add(typeof(MeleeAtackAction));
     }
 
     public override void Execute()
