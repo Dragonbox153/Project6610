@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,16 @@ public class DecisionNode : DecisionTreeNode
     DecisionTreeNode trueNode;
     DecisionTreeNode falseNode;
 
+    Func<bool> trueCheck;
+
+    public DecisionNode(Func<bool> boolCheck)
+    {
+        trueCheck = boolCheck;
+    }
+
     public virtual bool IsTrue()
     {
-        return false;
+        return trueCheck();
     }
 
     protected DecisionTreeNode GetBranch()
