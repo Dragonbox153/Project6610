@@ -11,7 +11,7 @@ public class Action : MonoBehaviour
 
     public float queuedTime;
     public float expiryTime;
-    public float priority;
+    public int priority;
 
     public bool CanInterupt()
     {
