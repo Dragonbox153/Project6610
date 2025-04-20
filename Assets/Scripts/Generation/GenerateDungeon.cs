@@ -5,16 +5,17 @@ using UnityEngine.Tilemaps;
 
 public class GenerateDungeon : MonoBehaviour
 {
-    [SerializeField] Tilemap wall, floor, treasure;
+    public Tilemap wall, floor, treasure;
     [SerializeField] RuleTile wallTile, floorTile, treasureTile;
     HashSet<Vector2Int> paintedFloorTiles;
-    [SerializeField] int iterations, walkLength, maxX, maxY;
+    public int iterations, walkLength, maxX, maxY;
     [SerializeField] short treasureRNG;
 
     // Start is called before the first frame update
     void Start()
     {
         RunGeneration();
+        GetComponent<Graph>().MakeGraph();
     }
 
     public void RunGeneration()
