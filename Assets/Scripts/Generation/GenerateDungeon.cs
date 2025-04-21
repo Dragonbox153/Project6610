@@ -12,7 +12,7 @@ public class GenerateDungeon : MonoBehaviour
     [SerializeField] short treasureRNG;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         RunGeneration();
         GetComponent<Graph>().MakeGraph();

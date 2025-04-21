@@ -101,11 +101,15 @@ public class ActionManager : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.X))
         {
-            GetComponent<MovementAction>().targetPosition = GameObject.Find("Player").transform.position;
+            Schedule(GetComponent<PathFindAction>());
+        }
+
+        if (Input.GetKeyUp(KeyCode.C))
+        {
             Schedule(GetComponent<MovementAction>());
         }
 
-        if(Input.GetKeyUp(KeyCode.C))
+        if(Input.GetKeyUp(KeyCode.V))
         {
             Schedule(GetComponent<FireAttackAction>());
         }
