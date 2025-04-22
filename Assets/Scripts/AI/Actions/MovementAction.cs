@@ -6,7 +6,7 @@ public class MovementAction : Action
 {
     public EnemyMovement enemyMovement;
     public float distanceThreshold;
-    public List<Node> path;
+    public Node nextNode;
 
     private bool amIMoving = false;
 
@@ -29,19 +29,18 @@ public class MovementAction : Action
 
     public override void Execute()
     {
-        path = GetComponent<PathFindAction>().path;
+        nextNode = GetComponent<PathFindAction>().nextNode;
 
         amIMoving = true;
 
-        if(Vector2.Distance(enemyMovement.gameObject.transform.position, path[0].position) > distanceThreshold)
+        if(Vector2.Distance(enemyMovement.gameObject.transform.position, nextNode.position) > distanceThreshold)
         {
             GameObject enemy = enemyMovement.gameObject;
-            enemyMovement.acceleration = new Vector2(path[0].position.x - enemy.transform.position.x, path[0].position.y - enemy.transform.position.y).normalized;
+            enemyMovement.acceleration = new Vector2(nextNode.position.x - enemy.transform.position.x, nextNode.position.y - enemy.transform.position.y).normalized;
             enemyMovement.acceleration *= enemyMovement.speed;
         }
         else
         {
-            GetComponent<PathFindAction>().path.Remove(path[0]);
             enemyMovement.acceleration = Vector2.zero;
         }
         

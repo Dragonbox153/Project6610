@@ -14,7 +14,6 @@ public class MeleeAttackAction : Action
     {
         interupting = false;
         canDoSimultaneously.Add(typeof(MovementAction));
-        canDoSimultaneously.Add(typeof(PathFindAction));
     }
 
     public override void Execute()

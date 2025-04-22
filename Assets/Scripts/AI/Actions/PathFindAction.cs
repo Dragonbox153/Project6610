@@ -6,8 +6,9 @@ using UnityEngine;
 public class PathFindAction : Action
 {
     Graph graph;
-    public List<Node> path = new List<Node>();
-    Vector2 endPosition;
+    public Node nextNode;
+    Vector2 playerPosition;
+    public float distFromPlayerStop;
 
     private bool isPathFound;
 
@@ -41,32 +42,26 @@ public class PathFindAction : Action
         return closest;
     }
 
-    void FindPath()
+    void FindNextNode()
     {
-        endPosition = GameObject.Find("Player").transform.position;
-        List<Edge> children = graph.edges.FindAll(e => e.startID == path.Last().id);
-        Node shortestDistChild = graph.nodes[children.First().sinkID];
-        for (int e = 0; e < children.Count; e++)
+        playerPosition = GameObject.Find("Player").transform.position;
+        List<Edge> children = graph.edges.FindAll(e => e.startID == nextNode.id);
+        Node closestChildToPlayer = graph.nodes[children[0].sinkID];
+        foreach (Edge e in children)
         {
-            if (Vector2.Distance(graph.nodes[children[e].sinkID].position, endPosition) < Vector2.Distance(shortestDistChild.position, endPosition))
+            if (Vector2.Distance(graph.nodes[e.sinkID].position, playerPosition) < Vector2.Distance(closestChildToPlayer.position, playerPosition))
             {
-                shortestDistChild = graph.nodes[children[e].sinkID];
+                closestChildToPlayer = graph.nodes[e.sinkID];
             }
         }
-
-        path.Add(shortestDistChild);
-        if (Vector2.Distance(shortestDistChild.position, endPosition) > 1)
-        {
-            FindPath();
-        }
+        nextNode = closestChildToPlayer;
+        GetComponent<MovementAction>().nextNode = nextNode;
     }
 
     public override void Execute()
     {
-        Node start = FindClosestNode(transform.position);
-        path.Add(start);
-        FindPath();
-        isPathFound = true;
+        nextNode = FindClosestNode(transform.position);
+        FindNextNode();
         finished = true;
     }
 }
