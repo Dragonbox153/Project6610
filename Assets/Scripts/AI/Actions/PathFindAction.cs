@@ -62,6 +62,7 @@ public class PathFindAction : Action
     {
         nextNode = FindClosestNode(transform.position);
         FindNextNode();
+        isPathFound = true;
         finished = true;
     }
 }
