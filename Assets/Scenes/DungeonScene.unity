@@ -452,7 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   queuedTime: 0
   expiryTime: 0.1
-  priority: -3
+  priority: 0
   distFromPlayerStop: 2
 --- !u!114 &1133789894
 MonoBehaviour:
