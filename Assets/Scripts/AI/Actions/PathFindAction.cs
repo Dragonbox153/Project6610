@@ -15,7 +15,7 @@ public class PathFindAction : Action
     private void Start()
     {
         graph = GameObject.Find("Grid").GetComponent<Graph>();
-
+        nextNode = FindClosestNode(transform.position);
         interupting = false;
     }
 
@@ -60,7 +60,6 @@ public class PathFindAction : Action
 
     public override void Execute()
     {
-        nextNode = FindClosestNode(transform.position);
         FindNextNode();
         isPathFound = true;
         finished = true;

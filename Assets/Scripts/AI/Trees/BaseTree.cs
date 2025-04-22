@@ -39,7 +39,7 @@ public class BaseTree : MonoBehaviour
 
         rootNode = inRange;
 
-        InvokeRepeating("performAct", 1, 1);
+        InvokeRepeating("performAct", 1, 0.1f);
     }
 
     void performAct()

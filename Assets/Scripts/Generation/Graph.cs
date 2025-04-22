@@ -18,7 +18,7 @@ public class Graph : MonoBehaviour
             for(int y = -dungeonGenerator.maxY; y < dungeonGenerator.maxY; y++)
             {
                 if (dungeonGenerator.floor.HasTile(new Vector3Int(x, y, 0))) {
-                    nodes.Add(new Node(currID, new Vector2(x, y)));
+                    nodes.Add(new Node(currID, new Vector2(x + 0.5f, y + 0.5f)));
                     MakeConnections(nodes.Last());
 
                     currID++;

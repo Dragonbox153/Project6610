@@ -41,7 +41,9 @@ public class MovementAction : Action
         }
         else
         {
+            GetComponent<PathFindAction>().finishPath();
             enemyMovement.acceleration = Vector2.zero;
+            amIMoving = false;
         }
         
     }
