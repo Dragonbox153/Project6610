@@ -65,12 +65,21 @@ public class ActionManager : MonoBehaviour
     {
         if (active.Count > 0)
         {
+            bool canDoAll = true;
             Action highestPriorityActive = active.Last();
             foreach (Action pendingAction in pending)
             {
-                if (pendingAction.CanDoBoth(highestPriorityActive.GetType()))
+                foreach(Action activeAction in active)
                 {
-                    active.Add(pendingAction);
+                    if (!pendingAction.CanDoBoth(highestPriorityActive.GetType()))
+                    {
+                        canDoAll = false;
+                    }
+                }
+
+                if (canDoAll)
+                {
+                    active.Add(highestPriorityActive);
                 }
             }
         }

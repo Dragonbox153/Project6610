@@ -16,10 +16,10 @@ GameObject:
   - component: {fileID: 1911777738404930374}
   - component: {fileID: 2059742601372883898}
   - component: {fileID: 7248538535555821869}
-  - component: {fileID: 3141241643702085254}
   - component: {fileID: 2094571753612243711}
   - component: {fileID: 498180935924744294}
   - component: {fileID: 7017418950556774274}
+  - component: {fileID: 3141241643702085254}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -183,20 +183,6 @@ MonoBehaviour:
   maxVelocity: 5
   speed: 1
   enemy: {fileID: 2765359353814802381}
---- !u!114 &3141241643702085254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454908234256749175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1093e4ea68f1c8d4991b9264f3d7c60c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pending: []
-  active: []
 --- !u!114 &2094571753612243711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +216,6 @@ MonoBehaviour:
   priority: 0
   enemyMovement: {fileID: 7248538535555821869}
   distanceThreshold: 4
-  targetPosition: {x: 0, y: 0}
 --- !u!114 &7017418950556774274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +232,20 @@ MonoBehaviour:
   expiryTime: 1
   priority: 0
   enemyFireBehavior: {fileID: 1911777738404930374}
+--- !u!114 &3141241643702085254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454908234256749175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1093e4ea68f1c8d4991b9264f3d7c60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pending: []
+  active: []
 --- !u!1 &6793883639519526925
 GameObject:
   m_ObjectHideFlags: 0

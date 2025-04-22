@@ -12,6 +12,7 @@ public class MovementAction : Action
     {
         interupting = false;
         canDoSimultaneously.Add(typeof(MeleeAttackAction));
+        canDoSimultaneously.Add(typeof(FireAttackAction));
     }
 
     public override void Execute()
