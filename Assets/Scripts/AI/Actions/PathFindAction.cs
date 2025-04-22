@@ -9,11 +9,23 @@ public class PathFindAction : Action
     public List<Node> path = new List<Node>();
     Vector2 endPosition;
 
+    private bool isPathFound;
+
     private void Start()
     {
         graph = GameObject.Find("Grid").GetComponent<Graph>();
 
         interupting = false;
+    }
+
+    public bool DidIFindPath()
+    {
+        return isPathFound;
+    }
+
+    public void finishPath()
+    {
+        isPathFound = false;
     }
 
     Node FindClosestNode(Vector2 position)
@@ -54,6 +66,7 @@ public class PathFindAction : Action
         Node start = FindClosestNode(transform.position);
         path.Add(start);
         FindPath();
+        isPathFound = true;
         finished = true;
     }
 }

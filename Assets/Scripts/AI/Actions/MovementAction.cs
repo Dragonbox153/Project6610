@@ -8,6 +8,8 @@ public class MovementAction : Action
     public float distanceThreshold;
     public List<Node> path;
 
+    private bool amIMoving = false;
+
     private void Start()
     {
         interupting = false;
@@ -15,9 +17,21 @@ public class MovementAction : Action
         canDoSimultaneously.Add(typeof(FireAttackAction));
     }
 
+    public bool AmIMovingNow()
+    {
+        return amIMoving;
+    }
+
+    public void SetMovementFalse()
+    {
+        amIMoving = false;
+    }
+
     public override void Execute()
     {
         path = GetComponent<PathFindAction>().path;
+
+        amIMoving = true;
 
         if(Vector2.Distance(enemyMovement.gameObject.transform.position, path[0].position) > distanceThreshold)
         {

@@ -16,6 +16,7 @@ public class FireAttackAction : Action
 
     public override void Execute()
     {
+        GetComponent<MovementAction>().SetMovementFalse();
         if (!attacking)
         {
             timer = 0;
