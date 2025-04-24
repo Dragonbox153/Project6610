@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 91599811fa9f51649867e6142f601e19
+guid: 2bb8b768665ff1e458c37b909df072d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -703897247109072270
-    second: Knight1_0
+      213: -2311659948842064771
+    second: Player_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,9 +49,9 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.5, y: 0.25}
-  spritePixelsToUnits: 16
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Knight1_0
+      name: Player_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
-        width: 16
-        height: 29
+        y: 0
+        width: 24
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27a30b3ee214b36f0800000000000000
-      internalID: -703897247109072270
+      spriteID: d7465c336855befd0800000000000000
+      internalID: -2311659948842064771
       vertices: []
       indices: 
       edges: []
@@ -170,7 +170,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Knight1_0: -703897247109072270
+      Player_0: -2311659948842064771
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
