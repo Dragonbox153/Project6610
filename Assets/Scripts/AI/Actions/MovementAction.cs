@@ -28,22 +28,13 @@ public class MovementAction : Action
         amIMoving = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.GetComponent<TilemapCollider2D>() != null)
-        {
-            Execute();
-        }
-    }
-
     public override void Execute()
     {
         nextNode = GetComponent<PathFindAction>().nextNode;
 
-        amIMoving = true;
-
         if(Vector2.Distance(transform.position, nextNode.position) > distanceThreshold)
         {
+            amIMoving = true;
             GameObject enemy = enemyMovement.gameObject;
             enemyMovement.acceleration = new Vector2(nextNode.position.x - enemy.transform.position.x, nextNode.position.y - enemy.transform.position.y).normalized;
             enemyMovement.acceleration *= enemyMovement.speed;

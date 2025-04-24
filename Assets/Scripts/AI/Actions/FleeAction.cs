@@ -16,7 +16,6 @@ public class FleeAction : Action
 
     public EnemyMovement enemyMovement;
     public float distanceThreshold;
-    private bool amIMoving = false;
 
     private void Start()
     {
@@ -66,8 +65,6 @@ public class FleeAction : Action
         FindNextNode();
         isPathFound = true;   
 
-        amIMoving = true;
-
         if(Vector2.Distance(transform.position, nextNode.position) > distanceThreshold)
         {
             GameObject enemy = enemyMovement.gameObject;
@@ -78,7 +75,6 @@ public class FleeAction : Action
         {
             isPathFound = false;
             enemyMovement.acceleration = Vector2.zero;
-            amIMoving = false;
         }
 
         finished = true;

@@ -8,18 +8,17 @@ public class DecisionNode : DecisionTreeNode
     DecisionTreeNode trueNode;
     DecisionTreeNode falseNode;
 
-    Func<bool> trueCheck;
-
-    public DecisionNode(Func<bool> boolCheck, DecisionTreeNode truth, DecisionTreeNode notTruth)
-    {
-        trueCheck = boolCheck;
-        trueNode = truth;
-        falseNode = notTruth;
-    }
+    protected Func<bool> trueCheck;
 
     public virtual bool IsTrue()
     {
         return trueCheck();
+    }
+
+    public void SetNodes(DecisionTreeNode i_trueNode, DecisionTreeNode i_falseNode)
+    {
+        trueNode = i_trueNode;
+        falseNode = i_falseNode;
     }
 
     protected DecisionTreeNode GetBranch()

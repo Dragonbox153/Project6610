@@ -71,7 +71,7 @@ public class PathFindAction : Action
     public override void Execute()
     {
         FindNextNode();
-        isPathFound = true;   
+        isPathFound = true;
         finished = true;
     }
 }

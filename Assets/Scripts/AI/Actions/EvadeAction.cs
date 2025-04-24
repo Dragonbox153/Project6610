@@ -17,7 +17,6 @@ public class EvadeAction : Action
 
     public EnemyMovement enemyMovement;
     public float distanceThreshold;
-    private bool amIMoving = false;
 
     private void Start()
     {
@@ -68,8 +67,6 @@ public class EvadeAction : Action
         FindNextNode();
         isPathFound = true;   
 
-        amIMoving = true;
-
         Vector2 playerPoint = GameObject.Find("Player").transform.position;
         Vector2 myPoint = gameObject.transform.position;
 
@@ -85,7 +82,6 @@ public class EvadeAction : Action
         {
             isPathFound = false;
             enemyMovement.acceleration = Vector2.zero;
-            amIMoving = false;
         }
 
         finished = true;

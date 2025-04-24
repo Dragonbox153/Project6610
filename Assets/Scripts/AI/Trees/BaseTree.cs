@@ -20,51 +20,17 @@ public class BaseTree : MonoBehaviour
 
     protected void SetShouldPathFind(DecisionTreeNode trueNode, DecisionTreeNode falseNode)
     {
-        shouldPathfind = new DecisionNode(() => {
-            return GetComponent<PathFindAction>().DidIFindPath();
-        },
-        trueNode, falseNode);
+        GetComponent<ShouldPathfindDecision>().SetNodes(trueNode, falseNode);
     }
 
     protected void SetShouldMove(DecisionTreeNode trueNode, DecisionTreeNode falseNode)
     {
-        shouldMove = new DecisionNode(() => {
-            Vector2 playerPoint = GameObject.Find("Player").transform.position;
-            Vector2 myPoint = gameObject.transform.position;
-            return (GetComponent<MovementAction>().AmIMovingNow() && Math.Abs((myPoint - playerPoint).magnitude) < 5.5);
-        },
-        trueNode, falseNode);
+        GetComponent<ShouldMoveDecision>().SetNodes(trueNode, falseNode);
     }
 
     protected void SetInRange(DecisionTreeNode trueNode, DecisionTreeNode falseNode)
     {
-        inRange = new DecisionNode(() => {
-            if (player != null)
-            {
-                Vector2 playerPoint = player.transform.position;
-                Vector2 myPoint = gameObject.transform.position;
-                Debug.Log(Math.Abs((myPoint - playerPoint).magnitude));
-                // Is the enemy close?
-                if (Math.Abs((myPoint - playerPoint).magnitude) < 1.7)
-                {
-                    return true;
-                } 
-            }
-            return false;
-        },
-        trueNode, falseNode);
-    }
-
-    protected void SetShouldStand(DecisionTreeNode trueNode, DecisionTreeNode falseNode)
-    {
-        shouldStand = new DecisionNode(() =>
-        {
-            if (player == null)
-            {
-                return true;
-            }
-            return false;
-        }, trueNode, falseNode);
+        GetComponent<InRangeDecision>().SetNodes(trueNode, falseNode);
     }
 
     protected void SetRootNode(DecisionNode i_rootNode)

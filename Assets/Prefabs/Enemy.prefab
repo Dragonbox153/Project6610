@@ -12,17 +12,7 @@ GameObject:
   - component: {fileID: 5410031780009688450}
   - component: {fileID: 5841251354744862162}
   - component: {fileID: 2765359353814802381}
-  - component: {fileID: 3083038763271417707}
-  - component: {fileID: 1911777738404930374}
-  - component: {fileID: 2059742601372883898}
-  - component: {fileID: 7248538535555821869}
-  - component: {fileID: 8862288704419862056}
-  - component: {fileID: 2094571753612243711}
-  - component: {fileID: 498180935924744294}
-  - component: {fileID: 7017418950556774274}
-  - component: {fileID: 3141241643702085254}
-  - component: {fileID: 1764669396873057039}
-  - component: {fileID: 1267004732521598043}
+  - component: {fileID: 4822087868450562090}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -123,7 +113,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3083038763271417707
+--- !u!114 &4822087868450562090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,155 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 454908234256749175}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2914c68f665ab3647882143db60f3d76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyMeleeAttack: {fileID: 6180788050581527073, guid: 107ba342b41c42446aff23ecd88db188, type: 3}
---- !u!114 &1911777738404930374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454908234256749175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 626f4682590fe45baa819bf58e473f8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2059742601372883898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454908234256749175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94291213dfe3a9344880361c11afd070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7248538535555821869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454908234256749175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49da0a3d3cd07fe48a4bbfa9bb059f92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acceleration: {x: 0, y: 0}
-  maxVelocity: 2
-  speed: 0.5
-  enemy: {fileID: 2765359353814802381}
---- !u!114 &8862288704419862056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454908234256749175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10ff3d6562f00a647b48835b1ff7d074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  queuedTime: 0
-  expiryTime: 0
-  priority: 0
---- !u!114 &2094571753612243711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454908234256749175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fcdd1fe874aa964582ccaaf397e0273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  queuedTime: 0
-  expiryTime: 3
-  priority: 0
-  enemyMeleeAttack: {fileID: 3083038763271417707}
---- !u!114 &498180935924744294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454908234256749175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ae8173914131a4b802ba838124f3e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  queuedTime: 0
-  expiryTime: 0.1
-  priority: 0
-  enemyMovement: {fileID: 7248538535555821869}
-  distanceThreshold: 0.4
---- !u!114 &7017418950556774274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454908234256749175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 004f0c12c31264e3a8749b3aa35339b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  queuedTime: 0
-  expiryTime: 1
-  priority: 0
-  enemyFireBehavior: {fileID: 1911777738404930374}
---- !u!114 &3141241643702085254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454908234256749175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1093e4ea68f1c8d4991b9264f3d7c60c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pending: []
-  active: []
---- !u!114 &1764669396873057039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454908234256749175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdf8a7a28ecf5e14e86cb831b6cb55e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  queuedTime: 0
-  expiryTime: 0.1
-  priority: 1
-  treasure: {fileID: 0}
-  distFromPlayerStop: 2
---- !u!114 &1267004732521598043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454908234256749175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 673755c88cc8b4a07842a5826e91a00a, type: 3}
+  m_Script: {fileID: 11500000, guid: ed07049a60cd9074693477643543831d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6793883639519526925
