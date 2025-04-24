@@ -10,7 +10,7 @@ public class PlayerAttackEffect : MonoBehaviour
         if(collision.GetComponent<EnemyHealth>()  != null && bulletIsType(bulID, 1))
         {
             Debug.Log("Player lands a close hit!");
-            collision.GetComponent<EnemyHealth>().TakeDamage(2);
+            collision.GetComponent<EnemyHealth>().TakeDamage(1);
         }
         if(collision.GetComponent<PlayerHealth>()  != null && bulletIsType(bulID, 2))
         {
