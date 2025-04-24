@@ -12,6 +12,7 @@ public class FireAttackAction : Action
     {
         interupting = false;
         canDoSimultaneously.Add(typeof(MovementAction));
+        canDoSimultaneously.Add(typeof(EvadeAction));
     }
 
     public override void Execute()
