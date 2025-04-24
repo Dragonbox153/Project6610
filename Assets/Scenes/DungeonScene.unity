@@ -197,6 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 584950753}
   - component: {fileID: 584950752}
+  - component: {fileID: 584950754}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -234,6 +235,23 @@ Transform:
   - {fileID: 1407618278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &584950754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584950751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2b2480643da486991cb2371b4d1a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walls: {fileID: 1611985578}
+  treasure: {fileID: 1668672931}
+  Elite: {fileID: 6531699556171084499, guid: 291eb0d4aa6ca49debdcd0926d554dd5, type: 3}
+  Berserker: {fileID: 866224926906617191, guid: b111a72d0e5134af6a982455db0e3ad3, type: 3}
+  Grunt: {fileID: 3520555205354594165, guid: b65b55e7bee794d8aabbc3e822ccd15e, type: 3}
 --- !u!1001 &785167194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -500,6 +518,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7558473181471117185, guid: 291eb0d4aa6ca49debdcd0926d554dd5, type: 3}
   m_PrefabInstance: {fileID: 785167194}
   m_PrefabAsset: {fileID: 0}
+--- !u!1839735485 &1611985578 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 6981602130109491214, guid: a1da446baaff87f4bb8379cdca94c511, type: 3}
+  m_PrefabInstance: {fileID: 1120514452}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1611986605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -609,6 +632,11 @@ CircleCollider2D:
 --- !u!1 &1668672926 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5233279039559961386, guid: a1da446baaff87f4bb8379cdca94c511, type: 3}
+  m_PrefabInstance: {fileID: 1120514452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1839735485 &1668672931 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 3080183742546669037, guid: a1da446baaff87f4bb8379cdca94c511, type: 3}
   m_PrefabInstance: {fileID: 1120514452}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2071123705 stripped

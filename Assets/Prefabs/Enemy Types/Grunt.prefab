@@ -60,6 +60,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5475489326123060605, guid: 4cb4491043bb9514cbee0472698061a4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2448400322565770343, guid: 134206cd8cf83429da3286f3ae44558d, type: 3}
+    - target: {fileID: 5475489326123060605, guid: 4cb4491043bb9514cbee0472698061a4, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475489326123060605, guid: 4cb4491043bb9514cbee0472698061a4, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475489326123060605, guid: 4cb4491043bb9514cbee0472698061a4, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6226257854595981117, guid: 4cb4491043bb9514cbee0472698061a4, type: 3}
       propertyPath: m_Radius
       value: 0.35
