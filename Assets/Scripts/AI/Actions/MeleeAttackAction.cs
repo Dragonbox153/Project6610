@@ -15,6 +15,7 @@ public class MeleeAttackAction : Action
         interupting = false;
         canDoSimultaneously.Add(typeof(MovementAction));
         canDoSimultaneously.Add(typeof(BerserkAction));
+        canDoSimultaneously.Add(typeof(EvadeMeleeAction));
     }
 
     public override void Execute()

@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class EvadeAction : Action
+public class EvadeFireAction : Action
 {
     [SerializeField] Tilemap treasure;
     Graph graph;
