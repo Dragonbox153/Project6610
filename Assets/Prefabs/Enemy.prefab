@@ -10,16 +10,19 @@ GameObject:
   m_Component:
   - component: {fileID: 3751636808157785893}
   - component: {fileID: 5410031780009688450}
-  - component: {fileID: 3514160874493599944}
+  - component: {fileID: 5841251354744862162}
   - component: {fileID: 2765359353814802381}
   - component: {fileID: 3083038763271417707}
   - component: {fileID: 1911777738404930374}
   - component: {fileID: 2059742601372883898}
   - component: {fileID: 7248538535555821869}
+  - component: {fileID: 8862288704419862056}
   - component: {fileID: 2094571753612243711}
   - component: {fileID: 498180935924744294}
   - component: {fileID: 7017418950556774274}
   - component: {fileID: 3141241643702085254}
+  - component: {fileID: 1764669396873057039}
+  - component: {fileID: 1267004732521598043}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -57,8 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 4
   maxHealth: 4
---- !u!61 &3514160874493599944
-BoxCollider2D:
+--- !u!58 &5841251354744862162
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,17 +95,7 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!50 &2765359353814802381
 Rigidbody2D:
   serializedVersion: 4
@@ -180,9 +173,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: {x: 0, y: 0}
-  maxVelocity: 5
-  speed: 1
+  maxVelocity: 2
+  speed: 0.5
   enemy: {fileID: 2765359353814802381}
+--- !u!114 &8862288704419862056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454908234256749175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ff3d6562f00a647b48835b1ff7d074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queuedTime: 0
+  expiryTime: 0
+  priority: 0
 --- !u!114 &2094571753612243711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   queuedTime: 0
-  expiryTime: 4
+  expiryTime: 3
   priority: 0
   enemyMeleeAttack: {fileID: 3083038763271417707}
 --- !u!114 &498180935924744294
@@ -215,7 +223,7 @@ MonoBehaviour:
   expiryTime: 0.1
   priority: 0
   enemyMovement: {fileID: 7248538535555821869}
-  distanceThreshold: 4
+  distanceThreshold: 0.4
 --- !u!114 &7017418950556774274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +254,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pending: []
   active: []
+--- !u!114 &1764669396873057039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454908234256749175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf8a7a28ecf5e14e86cb831b6cb55e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queuedTime: 0
+  expiryTime: 0.1
+  priority: 1
+  treasure: {fileID: 0}
+  distFromPlayerStop: 2
+--- !u!114 &1267004732521598043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454908234256749175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673755c88cc8b4a07842a5826e91a00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6793883639519526925
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +358,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
   m_Color: {r: 0.6666667, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
