@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class EnemyAttackEffect : MonoBehaviour
 {
-    GameObject enemy;
-
-    private void Awake()
-    {
-        enemy = this.gameObject;
-    }
+    public GameObject enemy;
 
     private void FixedUpdate()
     {
