@@ -355,7 +355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 498180935924744294, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
       propertyPath: distanceThreshold
-      value: 0.1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2094571753612243711, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
       propertyPath: expiryTime
@@ -363,11 +363,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3751636808157785893, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: -3.79
       objectReference: {fileID: 0}
     - target: {fileID: 3751636808157785893, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.27
       objectReference: {fileID: 0}
     - target: {fileID: 3751636808157785893, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   queuedTime: 0
   expiryTime: 0.1
-  priority: 0
+  priority: 1
   distFromPlayerStop: 2
 --- !u!114 &1133789894
 MonoBehaviour:

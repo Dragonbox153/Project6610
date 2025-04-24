@@ -44,24 +44,30 @@ public class PathFindAction : Action
 
     void FindNextNode()
     {
-        playerPosition = GameObject.Find("Player").transform.position;
-        List<Edge> children = graph.edges.FindAll(e => e.startID == nextNode.id);
-        Node closestChildToPlayer = graph.nodes[children[0].sinkID];
-        foreach (Edge e in children)
+        if(!isPathFound)
         {
-            if (Vector2.Distance(graph.nodes[e.sinkID].position, playerPosition) < Vector2.Distance(closestChildToPlayer.position, playerPosition))
+            playerPosition = GameObject.Find("Player").transform.position;
+            List<Edge> children = graph.edges.FindAll(e => e.startID == nextNode.id);
+            Node closestChildToPlayer = graph.nodes[children[0].sinkID];
+            foreach (Edge e in children)
             {
-                closestChildToPlayer = graph.nodes[e.sinkID];
+                if (Vector2.Distance(graph.nodes[e.sinkID].position, playerPosition) < Vector2.Distance(closestChildToPlayer.position, playerPosition))
+                {
+                    closestChildToPlayer = graph.nodes[e.sinkID];
+                }
             }
+            nextNode = closestChildToPlayer;
+
+            print(nextNode.position);
+
+            GetComponent<MovementAction>().nextNode = nextNode;
         }
-        nextNode = closestChildToPlayer;
-        GetComponent<MovementAction>().nextNode = nextNode;
     }
 
     public override void Execute()
     {
         FindNextNode();
-        isPathFound = true;
+        isPathFound = true;   
         finished = true;
     }
 }
