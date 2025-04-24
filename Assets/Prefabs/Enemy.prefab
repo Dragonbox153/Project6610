@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 4032077742236905963}
   - component: {fileID: 8022861863527489588}
   - component: {fileID: 3529312719399459237}
+  - component: {fileID: 2296614035008146440}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -317,6 +318,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94291213dfe3a9344880361c11afd070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2296614035008146440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454908234256749175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa87691c84884986958af90e2fdb16c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queuedTime: 0
+  expiryTime: 0.1
+  priority: 2
+  treasure: {fileID: 0}
+  distFromPlayerStop: 1
+  enemyMovement: {fileID: 8701737622013006595}
+  distanceThreshold: 0.35
 --- !u!1 &6793883639519526925
 GameObject:
   m_ObjectHideFlags: 0
