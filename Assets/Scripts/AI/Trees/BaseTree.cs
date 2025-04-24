@@ -17,7 +17,9 @@ public class BaseTree : MonoBehaviour
 
         // Am I moving? If I am, shoot. Otherwise, move.
         DecisionNode shouldMove = new DecisionNode(() => {
-            return GetComponent<MovementAction>().AmIMovingNow();
+            Vector2 playerPoint = GameObject.Find("Player").transform.position;
+            Vector2 myPoint = gameObject.transform.position;
+            return (GetComponent<MovementAction>().AmIMovingNow() && Math.Abs((myPoint-playerPoint).magnitude) < 5.5);
         },
         new ActionNode(GetComponent<FireAttackAction>()), shouldPathfind);
 
