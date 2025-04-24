@@ -47,6 +47,7 @@ public class GenerateDungeon : MonoBehaviour
             }
         }
 
+        // Spawns treasures in free spots.
         foreach(Vector2Int tile in paintedFloorTiles)
         {
             floor.SetTile((Vector3Int)tile, floorTile);
