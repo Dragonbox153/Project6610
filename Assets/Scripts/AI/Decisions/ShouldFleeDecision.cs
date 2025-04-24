@@ -14,7 +14,8 @@ public class ShouldFleeDecision : DecisionNode
                 timer += Time.deltaTime;
             }
             List<BerserkerTree> berserkers = GameObject.FindObjectsByType<BerserkerTree>(FindObjectsSortMode.None).ToList();
-            return (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().maxHealth / 4 && timer < 2) || berserkers.Count() == 0;
+            List<EliteTree> elites = GameObject.FindObjectsByType<EliteTree>(FindObjectsSortMode.None).ToList();
+            return (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().maxHealth / 4 && timer < 2) || (berserkers.Count() == 0 && elites.Count() == 0);
         });
     }
 }
