@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PathFindAction : Action
 {
+    [SerializeField] Tilemap treasure;
     Graph graph;
     public Node nextNode;
     Vector2 playerPosition;
@@ -14,6 +16,7 @@ public class PathFindAction : Action
 
     private void Start()
     {
+        treasure = GameObject.Find("Treasure").GetComponent<Tilemap>();
         graph = GameObject.Find("Grid").GetComponent<Graph>();
         nextNode = FindClosestNode(transform.position);
         interupting = false;
@@ -51,7 +54,8 @@ public class PathFindAction : Action
             Node closestChildToPlayer = graph.nodes[children[0].sinkID];
             foreach (Edge e in children)
             {
-                if (Vector2.Distance(graph.nodes[e.sinkID].position, playerPosition) < Vector2.Distance(closestChildToPlayer.position, playerPosition))
+                if (Vector2.Distance(graph.nodes[e.sinkID].position, playerPosition) < Vector2.Distance(closestChildToPlayer.position, playerPosition)
+                    && !treasure.HasTile(new Vector3Int((int)(graph.nodes[e.sinkID].position.x - 0.5f), (int)(graph.nodes[e.sinkID].position.y - 0.5f), 0)))
                 {
                     closestChildToPlayer = graph.nodes[e.sinkID];
                 }

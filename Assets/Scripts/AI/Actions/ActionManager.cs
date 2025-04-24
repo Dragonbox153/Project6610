@@ -123,7 +123,7 @@ public class ActionManager : MonoBehaviour
             Schedule(GetComponent<FireAttackAction>());
         }
 
-        active = active.Distinct().ToList();
+        
         UpdateActionQueuedTime();
         CheckInterrupts();
         PromoteQueuedToActive();
