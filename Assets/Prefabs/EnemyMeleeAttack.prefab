@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5872346973141102397}
   - component: {fileID: 7569637176232763481}
-  - component: {fileID: 8919787098590047032}
+  - component: {fileID: -2563750928148683003}
+  - component: {fileID: 1736802885146057379}
   m_Layer: 0
   m_Name: EnemyMeleeAttack
   m_TagString: Untagged
@@ -84,7 +85,34 @@ PolygonCollider2D:
       - {x: -1.5, y: -1.73}
       - {x: 1.5, y: -1.73}
   m_UseDelaunayMesh: 0
---- !u!114 &8919787098590047032
+--- !u!50 &-2563750928148683003
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6180788050581527073}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1736802885146057379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6180788050581527073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d086a761ee3664d46a316a2864f49dce, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c212657edb08f442aa24a9b6de0a782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7116329310630018214
