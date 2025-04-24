@@ -18,7 +18,6 @@ public class EnemyMeleeAttack : MonoBehaviour
     {
         Quaternion quaternion = Quaternion.Euler(0, 0, Mathf.Atan2(transform.position.y - player.transform.position.y, transform.position.x - player.transform.position.x) * Mathf.Rad2Deg - 90);
         currEnemyAttack = Instantiate(enemyMeleeAttack, transform.position, quaternion);
-        currEnemyAttack.GetComponent<EnemyAttackEffect>().enemy = this.gameObject;        
     }
 
     public void EndAttack()

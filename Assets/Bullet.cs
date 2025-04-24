@@ -51,25 +51,6 @@ public class Bullet : MonoBehaviour
         return bulIDStart;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        bulID = bulIDStart;
-        if(timeTravelled > 0)
-        {
-            if(collision.GetComponent<EnemyHealth>()  != null && bulletIsType(1))
-            {
-                Debug.Log("Player lands a hit!");
-                collision.GetComponent<EnemyHealth>().TakeDamage(2);
-                Destroy();
-            }
-            if(collision.GetComponent<PlayerHealth>()  != null && bulletIsType(2))
-            {
-                collision.GetComponent<PlayerHealth>().TakeDamage(2);
-                Destroy();
-            }
-        }
-    }
-
     private bool bulletIsType(byte type)
     {
         Debug.Log(bulID);

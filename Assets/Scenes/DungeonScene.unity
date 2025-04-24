@@ -353,6 +353,10 @@ PrefabInstance:
       propertyPath: treasure
       value: 
       objectReference: {fileID: 1668672931}
+    - target: {fileID: 2296614035008146440, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
+      propertyPath: treasure
+      value: 
+      objectReference: {fileID: 1668672931}
     - target: {fileID: 3751636808157785893, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.79
@@ -399,7 +403,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 454908234256749175, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1133789935}
+      addedObject: {fileID: 1133789936}
   m_SourcePrefab: {fileID: 100100000, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
 --- !u!4 &1133789880 stripped
 Transform:
@@ -411,18 +415,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 454908234256749175, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
   m_PrefabInstance: {fileID: 1133789879}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1133789919 stripped
+--- !u!114 &1133789933 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8701737622013006595, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7031349806488721559, guid: a1ea67e244d74404b9b4c307e9eb710c, type: 3}
   m_PrefabInstance: {fileID: 1133789879}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133789881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49da0a3d3cd07fe48a4bbfa9bb059f92, type: 3}
+  m_Script: {fileID: 11500000, guid: 2914c68f665ab3647882143db60f3d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1133789935
+--- !u!114 &1133789936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -431,16 +435,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1133789881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa87691c84884986958af90e2fdb16c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fcdd1fe874aa964582ccaaf397e0273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   queuedTime: 0
-  expiryTime: 0.1
-  priority: 2
-  treasure: {fileID: 1668672931}
-  distFromPlayerStop: 1
-  enemyMovement: {fileID: 1133789919}
-  distanceThreshold: 0.35
+  expiryTime: 4
+  priority: 1
+  enemyMeleeAttack: {fileID: 1133789933}
 --- !u!1001 &1611986605
 PrefabInstance:
   m_ObjectHideFlags: 0
