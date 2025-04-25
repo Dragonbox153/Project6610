@@ -26,6 +26,9 @@ public class TreasureDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.Find("Player");
+        treasureCount = player.GetComponent<GetTreasure>();
+        hpCount = player.GetComponent<PlayerHealth>();
         treasureDisplay.text = "Treasure: $" + (float)treasureCount.totalTreasure + ".00";
         HPDisplay.text = "HP: " + (float)hpCount.health;
     }
