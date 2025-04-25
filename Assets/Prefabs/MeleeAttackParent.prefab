@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7569637176232763481}
   - component: {fileID: 8438126947730762277}
   - component: {fileID: 2611017215974789204}
+  - component: {fileID: 4511556816296803564}
   m_Layer: 0
   m_Name: MeleeAttackParent
   m_TagString: Untagged
@@ -137,6 +138,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4511556816296803564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6180788050581527073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f60a44a5a952e4aa08e29e0a713724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  travelTime: 1
 --- !u!1 &7116329310630018214
 GameObject:
   m_ObjectHideFlags: 0
