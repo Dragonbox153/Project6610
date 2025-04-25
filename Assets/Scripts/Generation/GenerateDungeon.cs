@@ -10,12 +10,22 @@ public class GenerateDungeon : MonoBehaviour
     HashSet<Vector2Int> paintedFloorTiles;
     public int iterations, walkLength, maxX, maxY;
     [SerializeField] short treasureRNG;
+    [SerializeField] BasicSpawn enemySpawner;
 
     // Start is called before the first frame update
     void Awake()
     {
         RunGeneration();
         GetComponent<Graph>().MakeGraph();
+    }
+
+    private void Start()
+    {
+        int randNumTimes = Random.Range(1, 5);
+        for (int i = 0; i < randNumTimes; i++)
+        {
+            enemySpawner.SpawnEnemies();
+        }
     }
 
     public void RunGeneration()

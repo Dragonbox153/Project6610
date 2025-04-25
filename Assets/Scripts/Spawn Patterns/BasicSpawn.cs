@@ -21,75 +21,72 @@ public class BasicSpawn : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void SpawnEnemies()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            int formation = UnityEngine.Random.Range(0, 5);
-            int randy = UnityEngine.Random.Range(0, graph.nodes.Count);
-            float angle = UnityEngine.Random.Range(0, 2*Mathf.PI);
-            Vector2 spawnPos = graph.nodes[randy].position;
-            switch (formation){
-                // Brute Pack
-                case 0:
-                    InstantiateAtPos(Brute, spawnPos);
-                    angle += Mathf.PI / 6;
-                    InstantiateAtPos(Brute, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    InstantiateAtPos(Brute, new Vector2(spawnPos.x + 3.0f*Mathf.Cos(angle), spawnPos.y + 3.0f*Mathf.Sin(angle)));
-                    angle += 2 * Mathf.PI / 3;
-                    InstantiateAtPos(Brute, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    InstantiateAtPos(Brute, new Vector2(spawnPos.x + 3.0f*Mathf.Cos(angle), spawnPos.y + 3.0f*Mathf.Sin(angle)));
-                    break;
-                // Elite Strike Team
-                case 1:
-                    InstantiateAtPos(Elite, spawnPos);
-                    angle += Mathf.PI / 6;
-                    InstantiateAtPos(Elite, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    angle += 2 * Mathf.PI / 3;
-                    InstantiateAtPos(Elite, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    break;
-                // Brute Circle
-                case 2:
-                    InstantiateAtPos(Brute, spawnPos);
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    angle += Mathf.PI / 2;
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
-                    angle += Mathf.PI / 2;
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    angle += Mathf.PI / 2;
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
-                    break;
-                // Elite Double Team
-                case 3:
-                    InstantiateAtPos(Grunt, spawnPos);
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    angle += Mathf.PI / 2;
-                    InstantiateAtPos(Elite, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
-                    angle += Mathf.PI / 2;
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    angle += Mathf.PI / 2;
-                    InstantiateAtPos(Elite, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
-                    break;
-                // Basic Brute Team
-                case 4:
-                    InstantiateAtPos(Brute, spawnPos);
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    angle += Mathf.PI / 2;
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
-                    angle += Mathf.PI / 2;
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    break;
-                // Basic Elite Squad
-                default:
-                    InstantiateAtPos(Elite, spawnPos);
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    angle += Mathf.PI / 2;
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
-                    angle += Mathf.PI / 2;
-                    InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
-                    break;
-            }
-            
+        
+        int formation = UnityEngine.Random.Range(0, 5);
+        int randy = UnityEngine.Random.Range(0, graph.nodes.Count);
+        float angle = UnityEngine.Random.Range(0, 2*Mathf.PI);
+        Vector2 spawnPos = graph.nodes[randy].position;
+        switch (formation){
+            // Brute Pack
+            case 0:
+                InstantiateAtPos(Brute, spawnPos);
+                angle += Mathf.PI / 6;
+                InstantiateAtPos(Brute, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                InstantiateAtPos(Brute, new Vector2(spawnPos.x + 3.0f*Mathf.Cos(angle), spawnPos.y + 3.0f*Mathf.Sin(angle)));
+                angle += 2 * Mathf.PI / 3;
+                InstantiateAtPos(Brute, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                InstantiateAtPos(Brute, new Vector2(spawnPos.x + 3.0f*Mathf.Cos(angle), spawnPos.y + 3.0f*Mathf.Sin(angle)));
+                break;
+            // Elite Strike Team
+            case 1:
+                InstantiateAtPos(Elite, spawnPos);
+                angle += Mathf.PI / 6;
+                InstantiateAtPos(Elite, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                angle += 2 * Mathf.PI / 3;
+                InstantiateAtPos(Elite, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                break;
+            // Brute Circle
+            case 2:
+                InstantiateAtPos(Brute, spawnPos);
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                angle += Mathf.PI / 2;
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
+                angle += Mathf.PI / 2;
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                angle += Mathf.PI / 2;
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
+                break;
+            // Elite Double Team
+            case 3:
+                InstantiateAtPos(Grunt, spawnPos);
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                angle += Mathf.PI / 2;
+                InstantiateAtPos(Elite, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
+                angle += Mathf.PI / 2;
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                angle += Mathf.PI / 2;
+                InstantiateAtPos(Elite, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
+                break;
+            // Basic Brute Team
+            case 4:
+                InstantiateAtPos(Brute, spawnPos);
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                angle += Mathf.PI / 2;
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
+                angle += Mathf.PI / 2;
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                break;
+            // Basic Elite Squad
+            default:
+                InstantiateAtPos(Elite, spawnPos);
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                angle += Mathf.PI / 2;
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.0f*Mathf.Cos(angle), spawnPos.y + 1.0f*Mathf.Sin(angle)));
+                angle += Mathf.PI / 2;
+                InstantiateAtPos(Grunt, new Vector2(spawnPos.x + 1.5f*Mathf.Cos(angle), spawnPos.y + 1.5f*Mathf.Sin(angle)));
+                break;
         }
     }
 
