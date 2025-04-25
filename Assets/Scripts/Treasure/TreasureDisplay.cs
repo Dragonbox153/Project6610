@@ -16,6 +16,7 @@ public class TreasureDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         treasureCount = player.GetComponent<GetTreasure>();
         hpCount = player.GetComponent<PlayerHealth>();
         treasureDisplay.text = "Treasure: $" + (float)treasureCount.totalTreasure + ".00";

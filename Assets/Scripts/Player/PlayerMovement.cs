@@ -10,11 +10,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     public Rigidbody2D player;
 
+    private static GameObject instance;
+
     // Start is called before the first frame update
     void Start()
     {
         velocity = new Vector2(0, 0);
         acceleration = new Vector2(0, 0);
+        DontDestroyOnLoad(gameObject);
+
+        if (instance == null)
+            instance = gameObject;
+        else
+            Destroy(gameObject);
+        
     }
 
     // Update is called once per frame
