@@ -20,6 +20,15 @@ public class GetTreasure : MonoBehaviour
         }
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        treasureObject = GameObject.Find("Treasure");
+        if (treasureObject != null)
+        {
+            treasure = treasureObject.GetComponent<Tilemap>();
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         Vector3 hitPos = Vector3.zero;
